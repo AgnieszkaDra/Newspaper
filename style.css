@@ -1,96 +1,196 @@
-.flex-column{
+:root{
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+header{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.main__images{
     display: flex;
     width: 100%;
-   
+    height: 15vh;
+    background-color: aliceblue;
     
 }
 
-.flex-column p{
-    display: inline-block;
-    line-height: 2;
-    width: 20%;
+figure {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    float: left; 
 }
 
-.bold{
-    font-weight: 800;
-}
-
-.flex-column p{
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-column.first{
-    justify-content: space-between;
+figure:nth-child(odd) {
+    clear: left;
 } 
 
-flex
+.clearfix::after {
+    clear: both;
+}  
+
+.figure__image {
+    width: 50%;
+    height: 100%;
+    float: left; 
+}
+
+
+
+.figure__image.image1 {
+    clip-path: polygon(0 0, 100% 0, 45% 100%, 0% 100%);  
+    shape-outside: polygon(0 0, 100% 0, 45% 100%, 0% 100%); 
+}
+
+.figure__image.image2 {
+    clip-path: polygon(38% 0, 100% 0, 62% 100%, 0% 100%);
+    shape-outside: polygon(38% 0, 100% 0, 62% 100%, 0% 100%);
+}
+
+.figure__p {
+    margin-top: 0;
+    font-size: 0.8rem;
+}
+
+.main__text {
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 0.8em;
+    
+}
+
+.main__text__p.p1 {
+    grid-column: 1/4 ;
+    grid-row: 1/2;
+    
+}
+
+.main__text__p.p2 {
+    grid-column: 1/2 ;
+    grid-row: 2/3;
+    
+}
+
+.main__text__p.p3{
+    grid-column: 2/3 ;
+    grid-row: 2/3;
+   
+}
+
+.main__text__p.p4 {
+    grid-column:3/4 ;
+    grid-row:2/3 ;
+    
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+.image3 {
+   
+    clip-path: polygon(76% 5%, 100% 0, 100% 100%, 46% 100%, 40% 70%, 55% 54%, 76% 38%, 66% 20%);
+shape-outside: polygon(76% 5%, 100% 0, 100% 100%, 46% 100%, 40% 70%, 55% 54%, 76% 38%, 66% 20%);
+
+height: 100%;
+width: 100%;
+float: right;
+z-index: 100;
+margin-right: 0;
+
+
+} 
+
+.main__text__p.p5{
+    z-index: 1;
+}
 
 figure{
-
-min-height: 300px;
-min-width: 300px;
-max-width: 600px;
-text-align: justify;
+    width: 100%;
+    height: 100%;
+    
 }
 
-.image {
-    min-height: 100px;
-min-width: 150px;
-clip-path: polygon(0 0, 100% 0, 45% 100%, 0% 100%) ;
-background: url('IMG/city1.jpg');
-background-size: cover;
-shape-outside:polygon(0 0, 100% 0, 45% 100%, 0% 100%)  ; 
-float: left;
+.figure__image.image3{
+    margin-right: 0;
 }
 
-
-
-.wrapper{
-    min-width:300px;
-    min-height: 300px;
-    max-width: 400px;
-    max-height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+.figure.p6 {
+    margin-right: 0;
+    margin-left: 0;
+}
+.p6{
    
-    
-    
-}
-
-.wrapper > div {
-    width: 40px;
-    padding: 30px;
-    margin-right: 30px;
-    margin-bottom: 40px;
-
+    grid-column: 2/5;
+    grid-row: 2/3;
   
+    
 }
 
-.wrapper > p {
-    margin-right: 30px;
+.p5{
+    float: left;
 }
 
-.wrapper > .inline{
-    display: inline-block;
-    width: 90px;
-    height: 36px;
-    background-color: yellow;
-    font-size: larger;
+.figure.p6{
+    width: 100%;
+    height: 100%;
+    margin-top: 1.5em;
+    
+    grid-column: 4/5;
 }
 
-.image2{
-    min-height: 800px;
-min-width: 300px;
-clip-path: polygon(75% 51%, 64% 43%, 61% 30%, 65% 21%, 85% 15%, 100% 15%, 100% 100%, 87% 100%, 59% 100%, 49% 94%, 48% 78%, 59% 60%);
-background: url('IMG/city1.jpg');
-background-size: cover;
-shape-outside: polygon(75% 51%, 64% 43%, 61% 30%, 65% 21%, 85% 15%, 100% 15%, 100% 100%, 87% 100%, 59% 100%, 49% 94%, 48% 78%, 59% 60%);
-float: right;
+.figure.p6 > .figure__p{
+    font-size: 1rem;
+    margin-bottom: 0;
+    
+}
+
+.figure__image.image3{
+    grid-column: 2/5;
+    margin-top: 0;
 }
 
